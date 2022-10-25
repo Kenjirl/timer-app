@@ -201,6 +201,14 @@ button:active {
     display: none;
   }
 
+  span {
+    font-size: 1.5em;
+  }
+
+  span:nth-child(even) {
+    font-size: 1.5em;
+  }
+
   .wrap-hour {
     display: grid;
     grid-template-columns: 1fr;
