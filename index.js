@@ -39,12 +39,11 @@ function startCountdown() {
   $("#stop-btn").removeAttr("disabled");
   
   let countdown = setInterval(function() {
-    if (second === 0) {
+    if (second <= 1) {
       if (minute === 0) {
         if (hour === 0) {
           clearInterval(countdown);
           stopCountdown();
-          $("#beep")[0].play();
           return;
         } else {
           hour--;
@@ -58,6 +57,7 @@ function startCountdown() {
       second--;
     }
 
+    $("#tick")[0].play();
     $(".second").text(second);
     $(".minute").text(minute);
     $(".hour").text(hour);
@@ -69,6 +69,18 @@ function stopCountdown() {
   hour = 0;
   minute = 0;
   second = 0;
+  let loopBeep = 5;
+  $("#beep")[0].play();
+
+  let beep = setInterval(function() {
+    if (loopBeep !== 0) {
+      $("#beep")[0].play();
+    } else {
+      clearInterval(beep);
+    }
+    console.log(loopBeep);
+    loopBeep--;
+  }, 1000);
 
   $(".second").text(second);
   $(".minute").text(minute);
