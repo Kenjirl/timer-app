@@ -25,7 +25,7 @@
     </div>
     <audio id="beep" src="./sounds/beep-04.wav"></audio>
     <audio id="tick" src="./sounds/ticktock.mp3"></audio>
-    <div class="content" id="root">
+    <div class="content">
       <main>
         <h1 class="title">IDE BISNIS TIK - ITCC 2022</h1>
         <div class="app">
@@ -58,13 +58,13 @@
           </div>
 
           <div class="action-button-container">
-            <button type="button" onclick=startCountdown() id="start-btn">Start</button>
-            <button type="button" onclick=stopCountdown() id="stop-btn" disabled>Stop</button>
+            <button type="button" onclick=startCountdown() id="change-btn">Start</button>
+            <button type="button" onclick=stopCountdown() id="stop-btn" class="disable-btn" disabled>Stop</button>
           </div>
         </div>
       </main>
     </div>
 
-    <button class="theme-btn" onclick="changeTheme()"><i class="fa-regular fa-sun"></i></button>
+    <button class="theme-btn" id="theme-btn" onclick="changeTheme()"><i class="fa-regular fa-sun"></i></button>
   </body>
 </html>
