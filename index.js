@@ -62,7 +62,7 @@ function startCountdown() {
         second--;
       }
 
-      if (second < 10) {
+      if (minute === 0 && second < 10) {
         $("#tick")[0].play();
       }
 
